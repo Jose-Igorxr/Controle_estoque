@@ -8,6 +8,7 @@ class CategoriaSerializer(serializers.ModelSerializer):
 
 class ProdutoSerializer(serializers.ModelSerializer):
     categoria_detalhe = CategoriaSerializer(source='categoria', read_only=True)
+    categoria_nome = serializers.ReadOnlyField(source='categoria.nome')
 
     class Meta:
         model = Produto
