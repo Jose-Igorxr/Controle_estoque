@@ -2,9 +2,14 @@ import { createBrowserRouter, RouterProvider, Navigate, Outlet } from 'react-rou
 import Navbar from './components/Navbar';
 import ListaProdutos from './components/ListaProdutos';
 import ProdutoForm from './components/ProdutoForm';
+import MovimentacaoForm from './components/MovimentacaoForm';
 import Login from './components/Login';
+import RelatorioMovimentacao from './components/MovimentacaoRelatorio';
+import ProdutoEditarForm from './components/ProdutoEditarForm';
+import Dashboard from './components/Dashboard';
+import Perfil from './components/Perfil';
 
-// Componente de Layout que inclui a Navbar
+
 const MainLayout = () => {
   const token = localStorage.getItem('token');
   
@@ -14,7 +19,7 @@ const MainLayout = () => {
     <div className="min-h-screen bg-[#121212]">
       <Navbar />
       <main className="p-4">
-        <Outlet /> {/* Aqui é onde o conteúdo da página vai carregar */}
+        <Outlet /> 
       </main>
     </div>
   );
@@ -23,25 +28,45 @@ const MainLayout = () => {
 const router = createBrowserRouter([
   {
     path: "/login",
-    element: <Login />,
+    element: <Login/>,
   },
   {
     path: "/",
-    element: <MainLayout />, // Protege todas as rotas filhas
+    element: <MainLayout/>, 
     children: [
       {
-        path: "/",
-        element: <ListaProdutos />,
+        path: "/lista",
+        element: <ListaProdutos/>,
       },
       {
         path: "/cadastrar",
-        element: <ProdutoForm />,
+        element: <ProdutoForm/>,
+      },
+      {
+        path: "/movimentacao",
+        element: <MovimentacaoForm/>
+      },
+      {
+        path: "/relatorio",
+        element: <RelatorioMovimentacao/>
+      },
+      {
+        path: "/editar/:id",
+        element: <ProdutoEditarForm/>
+      },
+      {
+        path: "/dashboard",
+        element: <Dashboard/>,
+      },
+      {
+        path: "/perfil",
+        element: <Perfil/>,
       },
     ]
   },
   {
     path: "*",
-    element: <Navigate to="/" />,
+    element: <Navigate to="/dashboard" />,
   },
 ]);
 

@@ -1,4 +1,5 @@
 from django.db import models, transaction 
+from django.contrib.auth.models import User
 
 
 class Categoria(models.Model):
@@ -14,6 +15,7 @@ class Produto(models.Model):
     quantidade_atual = models.IntegerField(default=0)
     estoque_minimo = models.IntegerField(default=5)
     descricao = models.TextField(blank=True, null=True)
+    ativo = models.BooleanField(default=True)
 
     def __str__(self):
         return f"{self.nome} ({self.quantidade_atual})"
@@ -21,13 +23,33 @@ class Produto(models.Model):
 
 class Movimentacao(models.Model):
     TIPO_CHOICES = [('ENTRADA', 'Entrada'), ('SAIDA', 'Saída')]
-    
+
+    MOTIVO_CHOICES = [
+        # Motivos de Entrada
+        ('Compra', 'Compra de Fornecedor'),
+        ('Devolucao', 'Devolução de Cliente'),
+        ('Ajuste_Positivo', 'Ajuste de Inventário (+)'),
+        
+        # Motivos de Saída
+        ('Venda', 'Venda / Expedição'),
+        ('Avaria', 'Perda / Avaria'),
+        ('Consumo', 'Consumo Interno'),
+        ('Ajuste_Negativo', 'Ajuste de Inventário (-)'),
+    ]
+
     produto = models.ForeignKey(Produto, on_delete=models.CASCADE, related_name='movimentacoes')
     tipo = models.CharField(max_length=10, choices=TIPO_CHOICES)
     quantidade = models.IntegerField()
     data = models.DateTimeField(auto_now_add=True)
-    usuario_responsavel = models.CharField(max_length=100)
+    usuario_responsavel = models.ForeignKey(User, on_delete=models.PROTECT)
     destino_origem = models.CharField(max_length=200)
+
+    motivo = models.CharField(
+        max_length=50, 
+        choices=MOTIVO_CHOICES, 
+        null=True,   # Permite que as movimentações antigas fiquem vazias
+        blank=True
+    )
 
 
     def save(self, *args, **kwargs):
