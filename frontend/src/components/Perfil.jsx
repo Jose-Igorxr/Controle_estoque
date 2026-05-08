@@ -22,7 +22,7 @@ function Perfil() {
       return;
     }
 
-    axios.get('http://localhost:8000/api/usuario-logado/', {
+    axios.get('[https://api-controle-estoque-hyam.onrender.com](https://api-controle-estoque-hyam.onrender.com)/api/usuario-logado/', {
       headers: { 'Authorization': `Token ${token}` }
     })
     .then(res => {
@@ -54,7 +54,7 @@ function Perfil() {
       }
 
       
-      await axios.patch('http://localhost:8000/api/usuario-logado/', dadosParaEnviar, {
+      await axios.patch('[https://api-controle-estoque-hyam.onrender.com](https://api-controle-estoque-hyam.onrender.com)/api/usuario-logado/', dadosParaEnviar, {
         headers: { 'Authorization': `Token ${token}` }
       });
 

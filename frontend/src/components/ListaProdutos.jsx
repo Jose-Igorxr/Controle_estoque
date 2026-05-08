@@ -18,7 +18,7 @@ function ListaProdutos() {
 
   
   const carregarProdutos = () => {
-    axios.get('http://localhost:8000/api/produtos/', {
+    axios.get('[https://api-controle-estoque-hyam.onrender.com](https://api-controle-estoque-hyam.onrender.com)/api/produtos/', {
       headers: { 'Authorization': `Token ${token}` }
     })
     .then(response => setProdutos(response.data))
@@ -40,7 +40,7 @@ function ListaProdutos() {
   
   const alternarStatus = async (produtoId, statusAtual) => {
     try {
-      await axios.patch(`http://localhost:8000/api/produtos/${produtoId}/`, 
+      await axios.patch(`[https://api-controle-estoque-hyam.onrender.com](https://api-controle-estoque-hyam.onrender.com)/api/produtos/${produtoId}/`, 
         { ativo: !statusAtual }, 
         { headers: { 'Authorization': `Token ${token}` } }
       )

@@ -16,7 +16,7 @@ const ProdutoForm = () => {
   useEffect(() => {
     const fetchCategorias = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/categorias/', {
+        const response = await axios.get('[https://api-controle-estoque-hyam.onrender.com](https://api-controle-estoque-hyam.onrender.com)/api/categorias/', {
           headers: { 'Authorization': `Token ${token}` }
         });
         setCategorias(response.data);
@@ -30,7 +30,7 @@ const ProdutoForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:8000/api/produtos/', 
+      await axios.post('[https://api-controle-estoque-hyam.onrender.com](https://api-controle-estoque-hyam.onrender.com)/api/produtos/', 
         { nome, categoria: categoriaId, sku, descricao }, 
         { headers: { 'Authorization': `Token ${token}` } }
       );

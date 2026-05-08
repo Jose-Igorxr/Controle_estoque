@@ -20,8 +20,8 @@ function Dashboard() {
     const carregarDados = async () => {
       try {
         const [resProdutos, resMovimentacoes] = await Promise.all([
-          axios.get('http://localhost:8000/api/produtos/', { headers: { 'Authorization': `Token ${token}` } }),
-          axios.get('http://localhost:8000/api/movimentacoes/', { headers: { 'Authorization': `Token ${token}` } })
+          axios.get('[https://api-controle-estoque-hyam.onrender.com](https://api-controle-estoque-hyam.onrender.com)/api/produtos/', { headers: { 'Authorization': `Token ${token}` } }),
+          axios.get('[https://api-controle-estoque-hyam.onrender.com](https://api-controle-estoque-hyam.onrender.com)/api/movimentacoes/', { headers: { 'Authorization': `Token ${token}` } })
         ]);
 
         setProdutos(resProdutos.data);

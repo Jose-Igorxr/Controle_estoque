@@ -11,7 +11,7 @@ const Navbar = () => {
   useEffect(() => {
     const buscarDadosUsuario = async () => {
       try {        
-        const response = await axios.get('http://localhost:8000/api/usuario-logado/', {
+        const response = await axios.get('[https://api-controle-estoque-hyam.onrender.com](https://api-controle-estoque-hyam.onrender.com)/api/usuario-logado/', {
           headers: { 'Authorization': `Token ${token}` }
         });
         setUsuarioNome(response.data.nome); 
