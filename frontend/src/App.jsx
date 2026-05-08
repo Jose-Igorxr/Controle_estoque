@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider, Navigate, Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import ListaProdutos from './components/ListaProdutos';
-import ProdutoForm from './components/ProdutoForm';
+import ProdutoForm from './components/ProdutoFormulario.jsx';
 import MovimentacaoForm from './components/MovimentacaoForm';
 import Login from './components/Login';
 import RelatorioMovimentacao from './components/MovimentacaoRelatorio';
