@@ -130,6 +130,7 @@ STATIC_URL = 'static/'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173", 
     "http://localhost:3000", 
+    "https://controle-estoque-r78g.vercel.app",
 ]
 
 REST_FRAMEWORK = {
