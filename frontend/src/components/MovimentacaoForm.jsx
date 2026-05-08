@@ -33,7 +33,7 @@ const MovimentacaoForm = () => {
   useEffect(() => {
     const fetchProdutos = async () => {
       try {
-        const response = await axios.get('[https://api-controle-estoque-hyam.onrender.com](https://api-controle-estoque-hyam.onrender.com)/api/produtos/', {
+        const response = await axios.get('https://api-controle-estoque-hyam.onrender.com/api/produtos/', {
           headers: { 'Authorization': `Token ${token}` }
         });
         setProdutos(response.data);

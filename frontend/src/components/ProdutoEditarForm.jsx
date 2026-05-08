@@ -18,7 +18,7 @@ const ProdutoEditarForm = () => {
   useEffect(() => {
     const fetchCategorias = async () => {
       try {
-        const response = await axios.get('[https://api-controle-estoque-hyam.onrender.com](https://api-controle-estoque-hyam.onrender.com)/api/categorias/', {
+        const response = await axios.get('https://api-controle-estoque-hyam.onrender.com/api/categorias/', {
           headers: { 'Authorization': `Token ${token}` }
         });
         setCategorias(response.data);
@@ -33,7 +33,7 @@ const ProdutoEditarForm = () => {
   useEffect(() => {
     const fetchProduto = async () => {
       try {
-        const response = await axios.get(`[https://api-controle-estoque-hyam.onrender.com](https://api-controle-estoque-hyam.onrender.com)/api/produtos/${id}/`, {
+        const response = await axios.get(`https://api-controle-estoque-hyam.onrender.com/api/produtos/${id}/`, {
           headers: { 'Authorization': `Token ${token}` }
         });
         const produto = response.data;
@@ -57,7 +57,7 @@ const ProdutoEditarForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`[https://api-controle-estoque-hyam.onrender.com](https://api-controle-estoque-hyam.onrender.com)/api/produtos/${id}/`, 
+      await axios.put(`https://api-controle-estoque-hyam.onrender.com/api/produtos/${id}/`, 
         { nome, categoria: categoriaId, sku, descricao }, 
         { headers: { 'Authorization': `Token ${token}` } }
       );

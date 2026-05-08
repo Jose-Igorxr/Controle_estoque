@@ -11,7 +11,7 @@ function Login() {
   const fazerLogin = async (e) => {
     e.preventDefault()
     try {
-      const response = await axios.post('[https://api-controle-estoque-hyam.onrender.com](https://api-controle-estoque-hyam.onrender.com)/api/login/', {
+      const response = await axios.post('https://api-controle-estoque-hyam.onrender.com/api/login/', {
         username,
         password
       })

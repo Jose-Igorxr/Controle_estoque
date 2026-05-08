@@ -19,7 +19,7 @@ function RelatorioMovimentacao() {
       return;
     }
 
-    axios.get('[https://api-controle-estoque-hyam.onrender.com](https://api-controle-estoque-hyam.onrender.com)/api/movimentacoes/', {
+    axios.get('https://api-controle-estoque-hyam.onrender.com/api/movimentacoes/', {
       headers: { 'Authorization': `Token ${token}` }
     })
     .then(response => {
