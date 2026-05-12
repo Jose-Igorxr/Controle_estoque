@@ -49,7 +49,7 @@ const MovimentacaoForm = () => {
     setErro(''); 
 
     try {
-      await axios.post('[https://api-controle-estoque-hyam.onrender.com](https://api-controle-estoque-hyam.onrender.com)/api/movimentacoes/', 
+      await axios.post('https://api-controle-estoque-hyam.onrender.com/api/movimentacoes/', 
         { 
           produto: produtoId, 
           tipo: tipo, 
