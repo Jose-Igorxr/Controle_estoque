@@ -38,7 +38,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-[#1e1e1e] border-b border-gray-800 p-4 sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto flex items-center justify-between">
+      <div className="max-w-6xl mx-auto flex items-center justify-between gap-2">
         
         
         <div 

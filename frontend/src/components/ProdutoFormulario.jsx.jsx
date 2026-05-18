@@ -35,7 +35,7 @@ const ProdutoForm = () => {
         { headers: { 'Authorization': `Token ${token}` } }
       );
       alert("Sucesso!");
-      navigate('/'); 
+      navigate('/lista'); 
     } catch (error) {
       alert("Erro ao cadastrar.");
     }
