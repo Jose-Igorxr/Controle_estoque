@@ -62,7 +62,7 @@ const ProdutoEditarForm = () => {
         { headers: { 'Authorization': `Token ${token}` } }
       );
       alert("Produto atualizado com sucesso!");
-      navigate('/'); 
+      navigate('/lista'); 
     } catch (error) {
       console.error("Erro ao atualizar", error);
       alert("Erro ao atualizar o produto.");
@@ -133,7 +133,7 @@ const ProdutoEditarForm = () => {
           <div className="flex gap-3 mt-4">
             <button 
               type="button"
-              onClick={() => navigate('/dashboard')}
+              onClick={() => navigate('/lista')}
               className="w-1/3 bg-gray-700 text-gray-200 font-semibold py-2 px-4 rounded-lg hover:bg-gray-600 transition-colors"
             >
               Cancelar

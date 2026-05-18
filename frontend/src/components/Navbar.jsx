@@ -49,8 +49,8 @@ const Navbar = () => {
             <span className="text-xl">📦</span>
           </div>
           <div className="flex items-baseline">
-            <span className="text-xl font-bold text-white">Prefeitura</span>
-            <span className="ml-1.5 text-blue-400 text-bg font-light tracking-tight">Estoque</span>
+            <span className="text-xl font-bold text-white">Prefeitura Estoque</span>
+            <span className="ml-1.5 text-blue-400 text-bg font-light tracking-tight"></span>
           </div>
         </div>
        

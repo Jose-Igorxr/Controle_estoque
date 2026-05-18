@@ -61,7 +61,7 @@ const MovimentacaoForm = () => {
       );
       
       alert("Movimentação registrada com sucesso!");
-      navigate('/'); 
+      navigate('/relatorio'); 
       
     } catch (error) {
       console.error("Motivo da recusa do Django:", error.response?.data); 
