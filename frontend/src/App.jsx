@@ -35,6 +35,10 @@ const router = createBrowserRouter([
     element: <MainLayout/>, 
     children: [
       {
+        index: true, 
+        element: <Dashboard/>,
+      },
+      {
         path: "/lista",
         element: <ListaProdutos/>,
       },
